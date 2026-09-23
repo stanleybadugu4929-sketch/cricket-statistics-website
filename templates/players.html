@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Players | CricketStats</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏏 CricketStats
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="#">Teams</a>
+        <a href="#">Matches</a>
+        <a href="#">Statistics</a>
+    </div>
+
+</nav>
+
+
+<section class="players-page">
+
+    <h1>Cricket Players</h1>
+
+    <p>
+        Explore cricket players and their statistics.
+    </p>
+
+
+    <div class="player-grid">
+
+        <section class="players-page">
+
+    <h1>Cricket Players</h1>
+
+    <p>
+        Explore player profiles and performance statistics.
+    </p>
+
+    <div class="player-grid">
+
+        {% for player in players %}
+
+        <div class="player-card">
+
+            <div class="player-icon">
+                🏏
+            </div>
+
+            <h2>{{ player.name }}</h2>
+
+            <p class="country">
+                {{ player.country }}
+            </p>
+
+            <p>
+                <strong>Role:</strong> {{ player.role }}
+            </p>
+
+            <div class="player-stats">
+
+                <div>
+                    <strong>{{ player.matches }}</strong>
+                    <span>Matches</span>
+                </div>
+
+                <div>
+                    <strong>{{ player.runs }}</strong>
+                    <span>Runs</span>
+                </div>
+
+                <div>
+                    <strong>{{ player.average }}</strong>
+                    <span>Average</span>
+                </div>
+
+                <div>
+                    <strong>{{ player.strike_rate }}</strong>
+                    <span>Strike Rate</span>
+                </div>
+
+            </div>
+
+            <a
+    href="/players/{{ player.name.lower().replace(' ', '-') }}"
+    class="profile-button">
+    View Profile
+</a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+            <div class="player-icon">
+                👤
+            </div>
+
+            <h2>Jasprit Bumrah</h2>
+
+            <p>India</p>
+
+            <p>
+                Role: Bowler
+            </p>
+
+            <button>
+                View Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 CricketStats | Cricket Statistics & Match Analysis
+    </p>
+
+</footer>
+
+</body>
+
+</html>

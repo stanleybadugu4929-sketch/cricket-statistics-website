@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ player.name }} | CricketStats</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏏 CricketStats
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/players">Players</a>
+
+        <a href="#">Teams</a>
+
+        <a href="#">Matches</a>
+
+        <a href="#">Statistics</a>
+
+    </div>
+
+</nav>
+
+
+<section class="profile-page">
+
+    <a href="/players" class="back-button">
+        ← Back to Players
+    </a>
+
+
+    <div class="profile-header">
+
+        <div class="profile-icon">
+            🏏
+        </div>
+
+        <h1>{{ player.name }}</h1>
+
+        <p>{{ player.country }} • {{ player.role }}</p>
+
+    </div>
+
+
+    <div class="profile-stats">
+
+        <div class="profile-stat-card">
+
+            <h3>{{ player.matches }}</h3>
+
+            <p>Matches</p>
+
+        </div>
+
+
+        <div class="profile-stat-card">
+
+            <h3>{{ player.runs }}</h3>
+
+            <p>Runs</p>
+
+        </div>
+
+
+        <div class="profile-stat-card">
+
+            <h3>{{ player.average }}</h3>
+
+            <p>Average</p>
+
+        </div>
+
+
+        <div class="profile-stat-card">
+
+            <h3>{{ player.strike_rate }}</h3>
+
+            <p>Strike Rate</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-details">
+
+        <h2>Career Statistics</h2>
+
+        <div class="detail-row">
+
+            <span>Player</span>
+            <strong>{{ player.name }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Country</span>
+            <strong>{{ player.country }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Role</span>
+            <strong>{{ player.role }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Matches</span>
+            <strong>{{ player.matches }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Total Runs</span>
+            <strong>{{ player.runs }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Batting Average</span>
+            <strong>{{ player.average }}</strong>
+
+        </div>
+
+        <div class="detail-row">
+
+            <span>Strike Rate</span>
+            <strong>{{ player.strike_rate }}</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 CricketStats | Cricket Statistics & Match Analysis
+    </p>
+
+</footer>
+
+</body>
+
+</html>

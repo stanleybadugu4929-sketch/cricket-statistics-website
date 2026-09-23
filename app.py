@@ -1,11 +1,85 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
+players_data = [
+    {
+        "name": "Virat Kohli",
+        "country": "India",
+        "role": "Batsman",
+        "matches": 292,
+        "runs": 13848,
+        "average": 58.67,
+        "strike_rate": 93.54
+    },
+    {
+        "name": "Rohit Sharma",
+        "country": "India",
+        "role": "Batsman",
+        "matches": 275,
+        "runs": 11200,
+        "average": 48.50,
+        "strike_rate": 92.43
+    },
+    {
+        "name": "Jasprit Bumrah",
+        "country": "India",
+        "role": "Bowler",
+        "matches": 150,
+        "runs": 250,
+        "average": 12.50,
+        "strike_rate": 85.00
+    },
+    {
+        "name": "Babar Azam",
+        "country": "Pakistan",
+        "role": "Batsman",
+        "matches": 190,
+        "runs": 9500,
+        "average": 56.80,
+        "strike_rate": 88.20
+    },
+    {
+        "name": "Kane Williamson",
+        "country": "New Zealand",
+        "role": "Batsman",
+        "matches": 170,
+        "runs": 8500,
+        "average": 54.30,
+        "strike_rate": 81.70
+    },
+    {
+        "name": "Pat Cummins",
+        "country": "Australia",
+        "role": "Bowler",
+        "matches": 180,
+        "runs": 1200,
+        "average": 18.40,
+        "strike_rate": 75.60
+    }
+]
+
+
 @app.route("/")
 def home():
-    return "Cricket Statistics and Match Analysis Website"
+    return render_template("index.html")
+
+
+@app.route("/players")
+def players():
+    return render_template("players.html", players=players_data)
+@app.route("/players/<player_name>")
+def player_profile(player_name):
+
+    for player in players_data:
+        if player["name"].lower().replace(" ", "-") == player_name.lower():
+            return render_template(
+                "player_profile.html",
+                player=player
+            )
+
+    return "Player not found", 404
 
 
 if __name__ == "__main__":
