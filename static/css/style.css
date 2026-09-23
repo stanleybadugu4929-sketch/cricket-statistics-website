@@ -525,3 +525,79 @@ footer {
     }
 
 }
+/* Matches Page */
+
+.matches-page {
+    padding: 60px 8%;
+    min-height: 650px;
+    text-align: center;
+}
+
+.matches-page h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.matches-page > p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.match-list {
+    max-width: 900px;
+    margin: auto;
+}
+
+.match-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.match-teams {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.match-teams h2 {
+    margin-bottom: 10px;
+}
+
+.match-teams strong {
+    font-size: 24px;
+}
+
+.vs {
+    font-weight: bold;
+    color: #666;
+}
+
+.match-result {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.match-result h3 {
+    margin-bottom: 10px;
+}
+
+.match-result p {
+    color: #666;
+}
+
+@media (max-width: 600px) {
+
+    .match-teams {
+        grid-template-columns: 1fr;
+    }
+
+    .vs {
+        margin: 5px 0;
+    }
+
+}

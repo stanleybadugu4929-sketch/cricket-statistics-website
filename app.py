@@ -104,6 +104,32 @@ teams_data = [
         "wins": 55
     }
 ]
+matches_data = [
+    {
+        "team1": "India",
+        "team2": "Australia",
+        "team1_score": "285/6",
+        "team2_score": "276/9",
+        "result": "India won by 9 runs",
+        "player_of_match": "Virat Kohli"
+    },
+    {
+        "team1": "England",
+        "team2": "New Zealand",
+        "team1_score": "312/7",
+        "team2_score": "298/8",
+        "result": "England won by 14 runs",
+        "player_of_match": "Joe Root"
+    },
+    {
+        "team1": "Pakistan",
+        "team2": "South Africa",
+        "team1_score": "267/8",
+        "team2_score": "268/6",
+        "result": "South Africa won by 4 wickets",
+        "player_of_match": "Kagiso Rabada"
+    }
+]
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -126,7 +152,9 @@ def player_profile(player_name):
 @app.route("/teams")
 def teams():
     return render_template("teams.html", teams=teams_data)
-
+@app.route("/matches")
+def matches():
+    return render_template("matches.html", matches=matches_data)
 
 if __name__ == "__main__":
     app.run(debug=True)

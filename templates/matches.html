@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Teams | CricketStats</title>
+    <title>Matches | CricketStats</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
@@ -36,47 +36,48 @@
 </nav>
 
 
-<section class="teams-page">
+<section class="matches-page">
 
-    <h1>Cricket Teams</h1>
+    <h1>Match Results</h1>
 
     <p>
-        Explore team performance and match records.
+        Explore cricket match results and performances.
     </p>
 
 
-    <div class="team-grid">
+    <div class="match-list">
 
-        {% for team in teams %}
+        {% for match in matches %}
 
-        <div class="team-card">
+        <div class="match-card">
 
-            <div class="team-logo">
-                🏆
+            <div class="match-teams">
+
+                <div>
+                    <h2>{{ match.team1 }}</h2>
+                    <strong>{{ match.team1_score }}</strong>
+                </div>
+
+                <div class="vs">
+                    VS
+                </div>
+
+                <div>
+                    <h2>{{ match.team2 }}</h2>
+                    <strong>{{ match.team2_score }}</strong>
+                </div>
+
             </div>
 
-            <h2>{{ team.name }}</h2>
 
-            <p class="team-code">
-                {{ team.short_name }}
-            </p>
+            <div class="match-result">
 
-            <div class="team-info">
+                <h3>{{ match.result }}</h3>
 
-                <div>
-                    <strong>{{ team.captain }}</strong>
-                    <span>Captain</span>
-                </div>
-
-                <div>
-                    <strong>{{ team.matches }}</strong>
-                    <span>Matches</span>
-                </div>
-
-                <div>
-                    <strong>{{ team.wins }}</strong>
-                    <span>Wins</span>
-                </div>
+                <p>
+                    Player of the Match:
+                    <strong>{{ match.player_of_match }}</strong>
+                </p>
 
             </div>
 
