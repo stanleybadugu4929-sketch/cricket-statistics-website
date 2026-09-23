@@ -438,3 +438,90 @@ footer {
 .profile-button:hover {
     opacity: 0.9;
 }
+/* Teams Page */
+
+.teams-page {
+    padding: 60px 8%;
+    min-height: 650px;
+    text-align: center;
+}
+
+.teams-page h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.teams-page > p {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.team-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.team-logo {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.team-card h2 {
+    margin-bottom: 5px;
+}
+
+.team-code {
+    color: #1e3a8a;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.team-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.team-info div {
+    background: #f5f7fa;
+    padding: 12px 5px;
+    border-radius: 6px;
+}
+
+.team-info strong {
+    display: block;
+    font-size: 15px;
+}
+
+.team-info span {
+    display: block;
+    color: #666;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 800px) {
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Teams | CricketStats</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🏏 CricketStats
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/teams">Teams</a>
+        <a href="#">Matches</a>
+        <a href="#">Statistics</a>
+
+    </div>
+
+</nav>
+
+
+<section class="teams-page">
+
+    <h1>Cricket Teams</h1>
+
+    <p>
+        Explore team performance and match records.
+    </p>
+
+
+    <div class="team-grid">
+
+        {% for team in teams %}
+
+        <div class="team-card">
+
+            <div class="team-logo">
+                🏆
+            </div>
+
+            <h2>{{ team.name }}</h2>
+
+            <p class="team-code">
+                {{ team.short_name }}
+            </p>
+
+            <div class="team-info">
+
+                <div>
+                    <strong>{{ team.captain }}</strong>
+                    <span>Captain</span>
+                </div>
+
+                <div>
+                    <strong>{{ team.matches }}</strong>
+                    <span>Matches</span>
+                </div>
+
+                <div>
+                    <strong>{{ team.wins }}</strong>
+                    <span>Wins</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 CricketStats | Cricket Statistics & Match Analysis
+    </p>
+
+</footer>
+
+</body>
+
+</html>

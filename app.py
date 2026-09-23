@@ -60,7 +60,50 @@ players_data = [
     }
 ]
 
-
+teams_data = [
+    {
+        "name": "India",
+        "short_name": "IND",
+        "captain": "Rohit Sharma",
+        "matches": 120,
+        "wins": 78
+    },
+    {
+        "name": "Australia",
+        "short_name": "AUS",
+        "captain": "Pat Cummins",
+        "matches": 115,
+        "wins": 72
+    },
+    {
+        "name": "England",
+        "short_name": "ENG",
+        "captain": "Jos Buttler",
+        "matches": 110,
+        "wins": 64
+    },
+    {
+        "name": "New Zealand",
+        "short_name": "NZ",
+        "captain": "Kane Williamson",
+        "matches": 105,
+        "wins": 61
+    },
+    {
+        "name": "Pakistan",
+        "short_name": "PAK",
+        "captain": "Babar Azam",
+        "matches": 108,
+        "wins": 59
+    },
+    {
+        "name": "South Africa",
+        "short_name": "SA",
+        "captain": "Temba Bavuma",
+        "matches": 100,
+        "wins": 55
+    }
+]
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -80,6 +123,9 @@ def player_profile(player_name):
             )
 
     return "Player not found", 404
+@app.route("/teams")
+def teams():
+    return render_template("teams.html", teams=teams_data)
 
 
 if __name__ == "__main__":
